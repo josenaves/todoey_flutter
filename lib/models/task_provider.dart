@@ -28,4 +28,9 @@ class TaskProvider extends ChangeNotifier {
     task.toggleDone();
     notifyListeners();
   }
+
+  void deleteTask(String taskName) {
+    _tasks.removeWhere((item) => item.name == taskName);
+    notifyListeners();
+  }
 }
